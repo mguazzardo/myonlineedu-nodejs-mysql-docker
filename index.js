@@ -3,16 +3,16 @@ var mysql = require('mysql');
 var express = require('express');
 
 var app = express();
-var port = process.env.PORT || 8005;
+var port = process.env.PORT || 8000;
 var responseStr = "MySQL Data:";
 
 app.get('/',function(req,res){
    
-   var mysqlHost = process.env.MYSQL_HOST || 'localhost';
+   var mysqlHost = process.env.MYSQL_HOST || 'mariadb';
    var mysqlPort = process.env.MYSQL_PORT || '3306';
-   var mysqlUser = process.env.MYSQL_USER || 'root';
-   var mysqlPass = process.env.MYSQL_PASS || 'root';
-   var mysqlDB   = process.env.MYSQL_DB   || 'node_db';
+   var mysqlUser = process.env.MYSQL_USER || 'user1';
+   var mysqlPass = process.env.MYSQL_PASS || 'master';
+   var mysqlDB   = process.env.MYSQL_DB   || 'test';
 
    var connectionOptions = {
      host: mysqlHost,
